@@ -17,10 +17,15 @@ Screw_Edge_v2.py -->
 This is a simple scipt i made that sees when windows opens something on Edg, closes it, and opens it in Chrome instead.
 This could easily be reconfigured to monitor and replace any two browsers but if you want you can request from me.
 
+Requires: pygetwindow (pip)
+
 _____
 chat_msg.exe/chat_msg.pyw -->
 
-This is just a messanger i made from a 'firebase' realtime database that i made for free, it has end to end encryption (using CASPER) and allows for the creation of chats with different names and such. if you actually want to use this, ask me for the python file, but you will have to then put in your own details for the firebase as you cant have mine :)
+This is just a messanger i made from a 'firebase' realtime database that i made for free, it has end to end encryption (using CASPER) and allows for the creation of chats with different names and passwords. if you actually want to customise this or see the code, use the python file, but you will have to then put in your own details for the firebase as you cant have mine :)
+Do this by making a free firebase real time databse, then putting the content of the json you can download from firebase, and the link to the database, in the specified locations in the python scipt (in the __init__ function  of the GUI class).
+
+(python file) requires: firebase_admin
 
 _____
 image_hider.py -->
@@ -28,3 +33,5 @@ image_hider.py -->
 This is a very basic script i made that takes a path to a image file (openable in pygame, which is most), and a message. It then manipulates the RGB values of the pixels starting from the top left and hides the message in the image, then outputing a new image.
 
 Note: this does not account for the width of the image, if your message has more characters than the image has pixels in width, it will break (but that would be a pretty long message). A certain level of resolution is also needed but most should be fine. Lasltly, if you want it to be more secure to attackers, replace the 'alpha' list at the top with your own list in a random order.
+
+Requires: Pygame (pip)
