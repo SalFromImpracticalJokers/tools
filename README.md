@@ -35,3 +35,10 @@ This is a very basic script i made that takes a path to a image file (openable i
 Note: this does not account for the width of the image, if your message has more characters than the image has pixels in width, it will break (but that would be a pretty long message). A certain level of resolution is also needed but most should be fine. Lasltly, if you want it to be more secure to attackers, replace the 'alpha' list at the top with your own list in a random order.
 
 Requires: Pygame (pip)
+
+____
+video_cleaner.py -->
+
+This is a script that takes a video file, and then attempts to remove duplicate frames and then outputs a more smooth video file. It is slow to run so dont use massive videos and it also removes sound. Overall, not the best program in the world but a good proof of concept. feel free to mess around with it.
+
+Requires: opencv-python, numpy, scikit-image (pip)
