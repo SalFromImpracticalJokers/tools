@@ -91,11 +91,12 @@ class caspser_GUI:
             root_ref = db.reference()
             sections = root_ref.get(shallow=True)
             section_names = list(sections.keys())
+            list_names = []
             for i in section_names:
-                if "deleted-" in str(i): section_names.pop(section_names.index(i))
+                if "deleted-" not in str(i): list_names.append(i)
         except:
-            section_names = []
-        messagebox.showinfo("Chats", (("Chats:\n\n"+"\n".join(section_names)) if section_names != [] else "There are no chats"))
+            list_names = []
+        messagebox.showinfo("Chats", (("Chats:\n\n"+"\n".join(list_names)) if list_names != [] else "There are no chats"))
 
     def delete_chat(self):
         user_name = self.user_name_entry.get()
