@@ -14,7 +14,7 @@ anyways, have fun!
 _____
 Screw_Edge_v2.py -->
 
-This is a simple scipt i made that sees when windows opens something on Edg, closes it, and opens it in Chrome instead.
+This is a simple scipt i made that sees when windows opens something on Edge, closes it, and opens it in Chrome instead.
 This could easily be reconfigured to monitor and replace any two browsers but if you want you can request from me.
 
 Requires: pygetwindow (pip)
