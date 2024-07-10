@@ -46,7 +46,7 @@ Requires: opencv-python, numpy, scikit-image (pip)
 _____
 wifi_scanner.py -->
 
-This is a linux command line tool that uses 'iw' (a linux package that should be preinstalled but can be installed) to list all the different wifi's your wifi receiver is picking up in a tabel, showing ssid, frequency, strength, and quality. the table is in strenght order and is constantly refreshing with pipelining. This is a useful tool for setting up your home wifi as you can walk around and check what frequencies/channels to avoid based on how many wifi's around you (decrease interferance and packet loss). Also may be useful for network SECURITY (NO USING THIS FOR HACKING OK).
+This is a linux command line tool that uses 'iw' (a linux package that should be preinstalled but can be installed) to list all the different wifi's your wifi receiver is picking up in a table, showing ssid, frequency, strength, and quality. the table is in strenght order and is constantly refreshing with pipelining. This is a useful tool for setting up your home wifi as you can walk around and check what frequencies/channels to avoid based on how many wifi's around you (decrease interferance and packet loss). Also may be useful for network SECURITY (NO USING THIS FOR HACKING OK).
 
 requires: Linux + iw, keyboard (sudo pip, you dont need to have this but it allows you to pause it with spacebar)
 
