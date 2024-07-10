@@ -15,6 +15,33 @@ def reorder_list_with_value(input_list, value):
     sorted_list = sorted(input_list, key=lambda x: hash_value*(characters.index(x[(0 if len(x)==1 or characters.index(x[0]) <= (len(characters)-1)//2 else 1)])**2))
     return sorted_list
 
+def replace(string):
+    string = string.split("##R")
+    for i in range(1, (0 if len(string) < 0 else len(string))):
+        seg = string[i]
+        try:
+            code = chr(int(seg.split("##")[0]))
+            new = code + "##".join(seg.split("##")[1:])
+            string.pop(i)
+            string.insert(i, new)
+        except:
+            new = "##R" + seg
+            string.pop(i)
+            string.insert(i, new)
+    string = "".join(string)
+    if r"Ä" in string: string = string.replace(r"Ä", r"─")
+    if r"À" in string: string = string.replace(r"À", r"└")
+    if r"Ã" in string: string = string.replace(r"Ã", r"├")
+    if r"³" in string: string = string.replace(r"³", r"│")
+    return string
+
+def safe(msg):
+    msg = msg.strip("\n")
+    for i in msg:
+        if i not in characters: msg = msg.replace(i, f"##R{str(ord(i))}##")
+    msg = "".join([i for i in msg if i in characters])
+    return msg
+
 def string_to_binary_byte_data(string):
     byte_data = string.encode('ascii')    
     binary_byte_data = ''.join(format(byte, '08b') for byte in byte_data)
@@ -186,7 +213,8 @@ def sort_val(password):
     defualt = ("".join(["1" if int(i)<5 else "0" for i in (str((int(defualt)*(((sum([((len(characters)-1)-characters.index(i))**2 for i in password]))+3)**3))))])[::-1])[:len(defualt)]
     return (ts, tc, td)
 
-def casper_enc(text, password, length=15):
+def casper_enc(text, password, length=9000):
+    text = safe(text)
     prev = ""
     if len(text) > length:
         while len(text) > length:
@@ -231,8 +259,10 @@ def casper_enc(text, password, length=15):
 
 ## DEC FUNCS ##
 
-def casper_dec(text, password, length=15):
-    length = len(casper_enc(("".join(["a" for i in range(length)])), "a", length+1))
+def dec_length(start_length):
+    return len(casper_enc(("".join(["a" for i in range(start_length)])), "a", start_length+1))
+
+def casper_dec(text, password, length=12015):
     text = text[1:][:-1]
     prev = ""
     if len(text) > length:
@@ -272,7 +302,7 @@ def casper_dec(text, password, length=15):
     final = dec(cipher_text[::-1])
     final = table_dec(final, password)[:-1]
     subs, characters, defualt = (ts, tc, td)
-    return prev + final
+    return replace(prev + final)
 
 ## KEY GEN ##
 
