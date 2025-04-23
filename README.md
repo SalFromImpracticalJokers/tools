@@ -1,5 +1,7 @@
 _____
+CASPER_2.0 -->
 
+This is the second release of my CASPER encryption algorithm and is vastly superior to the first verion.
 
 _____
 CASPER_1.0_interact.py -->
