@@ -1,21 +1,5 @@
 _____
-CASPER_1.6_interact.py -->
 
-This is the most recent version of the CASPER encryption algorithm. The upgrades since 1.0 include:
-
-Rail and vigenere ciphers
-Hash based reorder of the static lists 'characters' and 'subs' based off the key
-Unique outputs from the same input through encryption based off random padding
-Base64 representation for smaller outputs
-Input is split into sections of a determined size (use the dec_length function to get the decryption section length)
-Additional xor operations
-More robust Key generation
-Compatibility with unicode and other non ascii characters not in the 'characters' list
-
-This algorithm is approximately 0.03 seconds slower for your information
-Heres an example of encrypted text, once again, I challenge all of you to tell me what is says:
-
-|5t6RW2iW'wIZ<Yh(pF:[RO4Tj%z/=\rTj l}o?^'9mw)2JiYo|iuf+EjR_8MA6/64j:%+zO|dUa@gSUsMp@#9m:t^rl.rHv(4;U2vWX %WVWc&qS(P-*7UesqQdx}gvUQ]lxJO^>)!V.e|:S!$bh%Q)ui|
 
 _____
 CASPER_1.0_interact.py -->
